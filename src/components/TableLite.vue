@@ -342,7 +342,14 @@ export default defineComponent({
         return key;
       }),
       // 當前頁數 (current page number)
-      page: props.page,
+      page: computed({
+        get(): number {
+          return props.page
+        },
+        set(newValue: number): void {
+          console.log(newValue);
+        },
+      }),
       // 每頁顯示筆數 (Display count per page)
       pageSize: props.pageSize,
       // 最大頁數 (Maximum number of pages)
